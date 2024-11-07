@@ -1,16 +1,10 @@
 package com.codedifferently.q4.team2;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Configuration;
+import com.codedifferently.q4.team2.service.GameEngine;
 
-@Configuration
-@SpringBootApplication(scanBasePackages = "com.codedifferently.q4.team2")
 public class GameLauncher {
-    public static void main(String[] args) {
-        var application = new SpringApplication(GameLauncher.class);
-        application.run(args);
-    }
+  public static void main(String[] args) {
+    GameEngine gameEngine = new GameEngine();
+    gameEngine.start();
+  }
 }

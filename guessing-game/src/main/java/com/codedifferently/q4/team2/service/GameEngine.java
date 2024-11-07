@@ -12,7 +12,7 @@ public class GameEngine {
 
   public void start() {
 
-    System.out.println("Welcome to the NumMeCrazy!");
+        System.out.println("Welcome to Guess Game - numMeCrazy");
         System.out.println("Choose a difficulty level:");
         System.out.println("1. Easy (1-10)");
         System.out.println("2. Medium (1-20)");
@@ -27,4 +27,4 @@ public class GameEngine {
             return;
         }
     }
- }
+}
