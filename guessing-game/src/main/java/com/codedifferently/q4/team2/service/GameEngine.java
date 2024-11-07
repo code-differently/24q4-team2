@@ -18,5 +18,13 @@ public class GameEngine {
         System.out.println("2. Medium (1-20)");
         System.out.println("3. Hard (1-50)");
         System.out.print("Enter 1, 2, or 3 to select difficulty level, or 0 to exit: ");
-  }
-}
+
+        int difficulty = console.nextInt();
+        
+        // Exit if user selects 0
+        if (difficulty == 0) {
+        System.out.println("Exiting the game.");
+            return;
+        }
+    }
+ }
