@@ -5,7 +5,7 @@ Project repo for team 2
 
 ### Functions of this program
 
-* A player chooses between "Solo Mode" and "Dual Mode" accompanied by a difficulty select before playing. There is also a back button on Difficulty Select and a Exit Game select on the Mode Select.
+* A player chooses between "Solo Mode" and "Dual Mode" accompanied by a difficulty select before playing. There is also a back select on Difficulty Select and a Exit Game select on the Mode Select.
 
 * Solo mode consists of having a random number generated for the player to guess. The player takes as many attepmts as they need to guess the right number and will be given hints after every attempt. There will also be a way exit the game if the player does not want to continue. 
 
