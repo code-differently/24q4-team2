@@ -29,15 +29,13 @@ public class GameEngine {
     System.out.println("              Welcome to numMeCrazy!");
     System.out.println("**************                      **************");
     System.out.println("**************************************************\n");
-    System.out.println(
-        "Created by: Oyeyemi Jimoh, James Capparell, Hummad Tanweer, and Nile Jackson\n");
     System.out.println("****** Please select Game difficulty level: ******\n");
     System.out.println("{1}. \t Easy (1-10)");
     System.out.println("{2}. \t Medium (1-20)");
     System.out.println("{3}. \t Hard (1-50)");
     System.out.println("{0}. \t To exit");
     console = new Scanner(System.in);
-    System.out.print("\nEnter 1, 2, 3 , or [ 0 to exit ]: \n\n");
+    System.out.print("\nEnter 1, 2, 3\n   or\n0 to exit: \n");
     int difficulty = console.nextInt();
     System.out.println("\n\n\n\n\n\n\n");
     System.out.println("*************************************************");
@@ -64,7 +62,7 @@ public class GameEngine {
     playerName = console.nextLine();
     System.out.println("\n\n");
     System.out.println(
-        "\n                Hi, " + playerName + "!\n            Let's get Started!\n");
+        "\n                Hi, " + playerName + "!\n            Let's get Started!\n\n\n\n\n");
     System.out.println("  Your Number GUESS must be Between 1 and " + level.value + "\n");
     play();
   }
@@ -99,7 +97,7 @@ public class GameEngine {
   }
 
   private int playerGuess(String playerName) {
-    System.out.print(playerName + ", Please enter your guess : or [ 0 to exit ] \n\n");
+    System.out.print("       " + playerName + ", Please enter your guess\n                   or\n               0 to exit: \n");
     int response = console.nextInt();
     return response;
   }
