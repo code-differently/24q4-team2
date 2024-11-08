@@ -73,8 +73,8 @@ public class GameEngine {
       isCorrect = validateGuess(guessedNumber);
       String result = (isCorrect) ? "Correct, congratulations !" : "Incorrect";
       System.out.println("Your Guess is " + result);
-
-      System.out.println("The expected number is  " + secretNumber);
+      String message = (secretNumber >= guessedNumber) ? "greater" : "less";
+      System.out.println("The expected number is  " + message + " than " + guessedNumber);
       if (guessedNumber == 0) {
         isGameOn = true;
       } else {
