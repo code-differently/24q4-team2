@@ -1,28 +1,26 @@
 package com.codedifferently.q4.team2;
-import com.codedifferently.q4.team2.Difficulty;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-
-
-// import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DifficultyTest {
 
   private Difficulty level;
 
-  // //public enum Difficulty {
-  //     EASY(10),
-  //     MEDIUM(20),
-  //     HARD(50);
+  public enum Difficulty {
+    EASY(10),
+    MEDIUM(20),
+    HARD(50);
 
-  //     public final int value;
+    public final int value;
 
-  //     private Difficulty(int value) {
-  //         this.value = value;
-  //     }
-  // }
+    private Difficulty(int value) {
+      this.value = value;
+    }
+  }
+
   @BeforeEach
   public void setup() {
     level = Difficulty.EASY;
