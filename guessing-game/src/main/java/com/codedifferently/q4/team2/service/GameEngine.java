@@ -29,6 +29,7 @@ public class GameEngine {
     System.out.println("              Welcome to numMeCrazy!");
     System.out.println("**************                      **************");
     System.out.println("**************************************************\n");
+    System.out.println("Created by: Oyeyemi Jimoh, James Capparell, Hummad Tanweer, and Nile Jackson ******\n");
     System.out.println("****** Please select Game difficulty level: ******\n");
     System.out.println("{1}. \t Easy (1-10)");
     System.out.println("{2}. \t Medium (1-20)");
