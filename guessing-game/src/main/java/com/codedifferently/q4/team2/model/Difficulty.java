@@ -1,27 +1,13 @@
-package com.codedifferently.q4.team2;
+package com.codedifferently.q4.team2.model;
 
 public enum Difficulty {
-  EASY,
-  MEDIUM,
-  HARD
-}
+  EASY(10),
+  MEDIUM(20),
+  HARD(50);
 
-// plugins {
-//    id("java")
-// }
-//
-// group = "com.codedifferently.q4.team2"
-// version = "1.0-SNAPSHOT"
-//
-// repositories {
-//    mavenCentral()
-// }
-//
-// dependencies {
-//    testImplementation(platform("org.junit:junit-bom:5.10.0"))
-//    testImplementation("org.junit.jupiter:junit-jupiter")
-// }
-//
-// tasks.test {
-//    useJUnitPlatform()
-// }
+  public final int value;
+
+  private Difficulty(int value) {
+      this.value = value;
+  }
+}

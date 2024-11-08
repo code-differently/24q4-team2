@@ -8,8 +8,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest(useMainMethod = SpringBootTest.UseMainMethod.WHEN_AVAILABLE)
 class GameLauncherTest {
 
-    @Test
-    void testMain() {
-        assertThat(new GameLauncherTest()).isNotNull();
-    }
+  @Test
+  void testMain() {
+    assertThat(new GameLauncherTest()).isNotNull();
+  }
 }
