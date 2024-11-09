@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class GameEngine {
 
   private Scanner console;
-  private int secretNumber;
+  protected int secretNumber;
   boolean isGameOn;
   String playerName;
   private int attempts;
