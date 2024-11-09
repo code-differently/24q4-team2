@@ -64,7 +64,7 @@ public class GameEngine {
     playerName = console.nextLine();
     System.out.println("\n\n");
     System.out.println(
-        "\n                Hi, " + playerName + "!\n            Let's get Started!\n\n\n\n\n");
+        "\n                 Hi, " + playerName + "!\n             Let's get Started!\n\n\n\n\n");
     System.out.println("  Your Number GUESS must be Between 1 and " + level.value + "\n");
     play();
   }
@@ -83,7 +83,7 @@ public class GameEngine {
       String message = (secretNumber >= guessedNumber) ? "greater" : "less";
       String result =
           (isCorrect)
-              ? "<<<Correct>>>\n              Congratulations!\n\n             It took "
+              ? "<<<Correct>>>\n              Congratulations!\n\n            It took "
                   + attempts
                   + " attempt(s).\n"
               : " Incorrect! \n    The expected number is "
