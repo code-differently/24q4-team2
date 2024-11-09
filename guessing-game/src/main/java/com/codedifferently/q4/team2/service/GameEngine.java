@@ -10,12 +10,14 @@ public class GameEngine {
   private int secretNumber;
   boolean isGameOn;
   String playerName;
+  private int attempts;
 
   public GameEngine() {
     this.console = new Scanner(System.in);
     this.secretNumber = -1;
     this.isGameOn = false;
     this.playerName = "";
+    this.attempts = 0;
   }
 
   public int generateNumberToGuess() {
@@ -74,30 +76,41 @@ public class GameEngine {
       guessedNumber = playerGuess(playerName);
       exitGame(guessedNumber);
       isCorrect = validateGuess(guessedNumber);
+
+      // Increment attempts after each guess
+      attempts++;
+
       String message = (secretNumber >= guessedNumber) ? "greater" : "less";
       String result =
           (isCorrect)
-              ? "<<<Correct>>>\n              Congratulations!\n\n             It took ? attempts\n"
+              ? "<<<Correct>>>\n              Congratulations!\n\n             It took "
+                  + attempts
+                  + " attempt(s).\n"
               : " Incorrect! \n    The expected number is "
                   + message
                   + " than "
                   + guessedNumber
                   + "\n                Try Again!\n";
-      System.out.println("\n\n\n                   " + guessedNumber + " is \n               " + result);
+      System.out.println(
+          "\n\n\n                   " + guessedNumber + " is \n               " + result);
       if (guessedNumber == 0) {
         isGameOn = true;
       } else {
         isGameOn = false;
       }
       if (isCorrect) {
-        System.out.println("\n          New secret number generated \n");
+        System.out.println("\n         New secret number generated \n");
         secretNumber = generateNumberToGuess();
+        attempts = 0;
       }
     }
   }
 
   private int playerGuess(String playerName) {
-    System.out.print("       " + playerName + ", Please enter your guess\n                   or\n               0 to exit: \n");
+    System.out.print(
+        "        "
+            + playerName
+            + ", Please enter your guess\n                    or\n                0 to exit: \n");
     int response = console.nextInt();
     return response;
   }
