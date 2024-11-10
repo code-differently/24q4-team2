@@ -100,6 +100,7 @@ public class GameEngine {
               ? "<<<Correct>>>\n              Congratulations!\n\n            It took "
                   + attempts
                   + " attempt(s)."
+
               : " Incorrect! \n    The expected number is "
                   + message
                   + " than "

@@ -1,5 +1,3 @@
-
-
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
@@ -9,6 +7,19 @@ plugins {
     id("com.diffplug.spotless") version "6.25.0"
     id("org.springframework.boot") version "3.2.2"
     id("com.adarshr.test-logger") version "4.0.0"
+    id("com.github.johnrengelman.shadow") version "7.1.0"
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+// Shadow JAR configuration
+tasks.shadowJar {
+    archiveBaseName.set("guessing-game")
+    archiveVersion.set("1.0")
+    mergeServiceFiles()
 }
 
 apply(plugin = "io.spring.dependency-management")
@@ -33,7 +44,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass.set("com.codedifferently.q4.team2")
+    mainClass.set("com.codedifferently.q4.team2.GameLauncher")
 }
 
 tasks.named<Test>("test") {
