@@ -2,9 +2,7 @@ package com.codedifferently.q4.team2.service;
 
 import com.codedifferently.q4.team2.model.Difficulty;
 import com.codedifferently.q4.team2.model.LeaderboardEntry;
-
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
@@ -30,11 +28,11 @@ public class GameEngine {
     this.playerName = "";
     this.attempts = 0;
 
-           // Initialize leaderboard for each difficulty
-        leaderboard = new HashMap<>();
-        leaderboard.put(Difficulty.EASY, new ArrayList<>());
-        leaderboard.put(Difficulty.MEDIUM, new ArrayList<>());
-        leaderboard.put(Difficulty.HARD, new ArrayList<>());
+    // Initialize leaderboard for each difficulty
+    leaderboard = new HashMap<>();
+    leaderboard.put(Difficulty.EASY, new ArrayList<>());
+    leaderboard.put(Difficulty.MEDIUM, new ArrayList<>());
+    leaderboard.put(Difficulty.HARD, new ArrayList<>());
   }
 
   public int generateNumberToGuess() {
@@ -151,31 +149,32 @@ public class GameEngine {
       System.exit(exitCode);
     }
   }
-      // Update the leaderboard for the given difficulty level
-    private void updateLeaderboard(Difficulty level) {
-        List<LeaderboardEntry> scores = leaderboard.get(level);
 
-        // Add the current player's result to the leaderboard
-        LeaderboardEntry newEntry = new LeaderboardEntry(playerName, attempts);
-        scores.add(newEntry);
+  // Update the leaderboard for the given difficulty level
+  private void updateLeaderboard(Difficulty level) {
+    List<LeaderboardEntry> scores = leaderboard.get(level);
 
-        // Sort the list based on the number of attempts (fewest first)
-        scores.sort(Comparator.comparingInt(LeaderboardEntry::getAttempts));
+    // Add the current player's result to the leaderboard
+    LeaderboardEntry newEntry = new LeaderboardEntry(playerName, attempts);
+    scores.add(newEntry);
 
-        // Keep only the top 10 scores
-        if (scores.size() > 5) {
-            scores.remove(scores.size() - 1); // Remove the last (worst) score
-        }
+    // Sort the list based on the number of attempts (fewest first)
+    scores.sort(Comparator.comparingInt(LeaderboardEntry::getAttempts));
 
-        displayLeaderboard(level);
+    // Keep only the top 10 scores
+    if (scores.size() > 5) {
+      scores.remove(scores.size() - 1); // Remove the last (worst) score
     }
 
-    // Display the leaderboard for a given difficulty level
-    private void displayLeaderboard(Difficulty level) {
-        List<LeaderboardEntry> scores = leaderboard.get(level);
-        System.out.println("\n       Top 5 Attempts (" + level.name() + " Difficulty):");
-        for (int i = 0; i < scores.size(); i++) {
-            System.out.println("           " + (i + 1) + ". " + scores.get(i));
-        }
+    displayLeaderboard(level);
+  }
+
+  // Display the leaderboard for a given difficulty level
+  private void displayLeaderboard(Difficulty level) {
+    List<LeaderboardEntry> scores = leaderboard.get(level);
+    System.out.println("\n       Top 5 Attempts (" + level.name() + " Difficulty):");
+    for (int i = 0; i < scores.size(); i++) {
+      System.out.println("           " + (i + 1) + ". " + scores.get(i));
     }
+  }
 }
