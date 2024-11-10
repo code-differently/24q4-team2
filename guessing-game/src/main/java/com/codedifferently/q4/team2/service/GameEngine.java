@@ -101,7 +101,7 @@ public class GameEngine {
           (isCorrect)
               ? "<<<Correct>>>\n              Congratulations!\n\n            It took "
                   + attempts
-                  + " attempt(s).\n"
+                  + " attempt(s)."
               : " Incorrect! \n    The expected number is "
                   + message
                   + " than "
@@ -163,20 +163,19 @@ public class GameEngine {
         scores.sort(Comparator.comparingInt(LeaderboardEntry::getAttempts));
 
         // Keep only the top 10 scores
-        if (scores.size() > 10) {
+        if (scores.size() > 5) {
             scores.remove(scores.size() - 1); // Remove the last (worst) score
         }
 
-        System.out.println("\nUpdated Leaderboard for " + level.name() + " Difficulty:");
         displayLeaderboard(level);
     }
 
     // Display the leaderboard for a given difficulty level
     private void displayLeaderboard(Difficulty level) {
         List<LeaderboardEntry> scores = leaderboard.get(level);
-        System.out.println("\nTop 10 Attempts (Fewest First):");
+        System.out.println("\n       Top 5 Attempts (" + level.name() + " Difficulty):");
         for (int i = 0; i < scores.size(); i++) {
-            System.out.println((i + 1) + ". " + scores.get(i) + " attempt(s)");
+            System.out.println("           " + (i + 1) + ". " + scores.get(i));
         }
     }
 }
