@@ -6,7 +6,7 @@ import com.codedifferently.q4.team2.service.DualMode;
 import com.codedifferently.q4.team2.service.GameEngine;
 import com.codedifferently.q4.team2.service.SoloMode;
 
-public class GameRunner {
+public class GameLauncher {
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
         System.out.println("\n\n\n\n\n\n\n\n\n         Select Game Mode: \n");

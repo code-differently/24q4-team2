@@ -44,7 +44,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass.set("com.codedifferently.q4.team2.GameRunner")
+    mainClass.set("com.codedifferently.q4.team2.GameLauncher")
 }
 
 tasks.named<Test>("test") {
