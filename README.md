@@ -15,6 +15,22 @@ Project repo for team 2
 
 * Once a player guesses correctly, the player will be prompted with the correct number, number of attempts and a decision to play again or exit the game to mode select.
 
+### CLI Configuration 
+* Users who prefer to play numMeCrazy in their terminal by using the following instructions;
+* Ensure that you have JDK 17 installed by running java --version 
+* Then run the gradle shadowjar command to make sure you have the proper gradle configuration.
+* After using gradle shadowjar users should run the following command, java -jar build/libs/guessing-game-1.0-all.jar . This command will generate the numMeCrazy interface, which allows users to enjoy our game from the terminal.
+
+* Alternatively, users can navigate to the GameLauncher.java file and right click. After right clicking on this file select the "Run Java" option and the game will generate that way as well. 
+
+
 Project Diagram:
 
-<img src="images/Screenshot 2024-11-10 at 5.43.42 PM.png" height=250 width=400/>
+
+<img src="images/Screenshot 2024-11-11 at 10.06.48 AM.png" height=250 width=400/>
+
+
+
+
+
+
