@@ -23,4 +23,4 @@ Project repo for team 2
 
 Project Diagram:
 
-<img src="/Users/nilejackson/Desktop/Screenshot 2024-11-11 at 10.06.48 AM.png" height=250 width=400/>
+<img src="Screenshot 2024-11-11 at 10.06.48 AM.png" height=250 width=400/>
