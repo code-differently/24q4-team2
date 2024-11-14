@@ -1,7 +1,7 @@
 # 24q4-team2
 Project repo for team 2
 
-## Number Guesssing Game Project
+## numMeCrazy Game Project
 
 ### Functions of this program
 
