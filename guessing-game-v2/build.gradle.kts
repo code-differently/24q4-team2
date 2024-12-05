@@ -40,6 +40,9 @@ dependencies {
     implementation("com.google.guava:guava:31.1-jre")
     implementation("com.google.code.gson:gson:2.10.1")
     implementation("org.springframework.boot:spring-boot-starter")
+    implementation("org.springframework.boot:spring-boot-starter-web")
+
+    developmentOnly("org.springframework.boot:spring-boot-devtools")
 }
 
 application {

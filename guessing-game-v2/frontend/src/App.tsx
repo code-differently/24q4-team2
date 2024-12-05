@@ -1,23 +1,21 @@
-import Home from "./pages/Home";
-
-
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { Blog } from './components/Blog'
-
+import { useEffect, useState } from 'react';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    // Fetch data from the Spring Boot API
+    fetch('http://localhost:8080/hello')
+      .then(response => response.text())
+      .then(data => setMessage(data))
+      .catch(error => console.error('Error fetching data:', error));
+  }, []);
 
   return (
-    <>
-    <div>
-      <Home />
+    <div className="App">
+      <h1>{message || 'Loading...'}</h1>
     </div>
-    </>
-  )
+  );
 }
 
-export default App
+export default App;
