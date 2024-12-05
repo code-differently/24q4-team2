@@ -18,7 +18,7 @@ java {
 // Shadow JAR configuration
 tasks.shadowJar {
     archiveBaseName.set("guessing-game")
-    archiveVersion.set("1.0")
+    archiveVersion.set("2.0")
     mergeServiceFiles()
 }
 

@@ -36,10 +36,15 @@ body {
     position: relative; /* Ensure that pseudo-element positioning works correctly */
 }
 .title-section::after{
-    content: url("https://img1.picmix.com/output/stamp/normal/7/1/6/4/1884617_5221b.gif");
-    right: -15em;
-    top: -50px;
-    width: 10%;
+    position: absolute;
+    content: '';
+    display: inline-block;
+    width: 200px;
+    height: 250px;
+    background-image: url("https://img1.picmix.com/output/stamp/normal/7/1/6/4/1884617_5221b.gif");
+    background-size: 200px;
+    top: -90px;    /* Aligns the image to the top of the parent */
+    right: -90px;  /* Aligns the image to the right of the parent */
 }
 .Title { 
     font-size: 45px;
@@ -58,6 +63,7 @@ body {
 }
 .buttons {
     display: flex;
+    flex-direction: column;
     justify-content: center;  /* Centers the buttons horizontally */
     align-items: center;
     gap: 20px;  /* Adds space between the buttons */
@@ -93,12 +99,12 @@ button:hover {
     font-size: 1.2rem;
     color: black;
   }
-.end {
+.credits {
   background-color: #f44336;
   color: white;
 }
-.end::after {
-  content: "?!";
+.credits::after {
+  content: "✏️";
   position: absolute;
   right: -7px;
   top: -8px;
