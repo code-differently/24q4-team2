@@ -2,6 +2,7 @@ body {
   background-color: orange;
   overflow: hidden; /* Hide scrollbars */
   min-width: 60em;
+  min-height: 2em;
 }
 .background-2 {
   background-color: green;
@@ -12,11 +13,10 @@ body {
   margin-right: 1%;
   margin-bottom: 1%;
   object-fit: cover;
-  height: 420em;
-  max-height: 50em;
+  height: 45em;
 }
 .paper-background{
-  background-image: url("https://i.pinimg.com/originals/0b/41/25/0b41253a4041ddb57004d633e4979430.jpg") ;
+  background-image: url("https://i.pinimg.com/originals/0b/41/25/0b41253a4041ddb57004d633e4979430.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   margin-left: 2%;
@@ -24,8 +24,7 @@ body {
   margin-right: 2%;
   margin-bottom: 2%;
   translate: 0% 2.5%;
-  height: 400em;
-  max-height: 47em;
+  height: 43em;
 }
 .title-section {
   max-width: 50%;
@@ -111,3 +110,29 @@ top: -8px;
 font-size: 1.2rem;
 color: black;
 }
+.submit {
+  background-color: #4caf50;
+  color: white;
+  align-items: center;
+  gap: 5px;
+  }
+  .submit::after {
+    content: "↩️";
+    position: absolute;
+    right: -8px;
+    top: -12px;
+    font-size: 1.2rem;
+    color: black;
+  }
+.title-button {
+    background-color: #f44336;
+    color: white;
+    }
+  .title-button::after {
+    content: "https://cdn2.iconfinder.com/data/icons/zoldo-minimal-user-interface-1/32/back_return_arrow-512.png";
+    position: absolute;
+    right: -7px;
+    top: -8px;
+    font-size: 1.2rem;
+    color: black;
+    }

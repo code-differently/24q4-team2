@@ -1,6 +1,7 @@
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import Header from "./components/Header";
 import { useEffect, useState } from 'react';
+import {Outlet} from 'react-router-dom';
 
 import reactLogo from './assets/numMeIcon.svg'
 import viteLogo from '/vite.svg'
@@ -21,10 +22,12 @@ function App() {
 
   return (
     <>
-    <div>
       <Header />
-      <Home />
-    </div>
+      <div className="main">
+        <div className="content">
+          <Outlet />
+        </div>
+      </div>
     </>
   )
 }
