@@ -28,7 +28,7 @@ public class GameEngine {
 
                 }
                 default: {
-                    System.out.println("\n⚠️ Invalid difficulty selcted. Defaulting to EASY level.");
+                    System.out.println("\n⚠️ Invalid difficulty selected. Defaulting to EASY level.");
                     return Difficulty.EASY;
                 }
             }
