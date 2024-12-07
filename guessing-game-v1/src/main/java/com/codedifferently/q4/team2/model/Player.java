@@ -9,9 +9,15 @@ public class Player {
   private LocalDateTime gameStartTime;
   private LocalDateTime gameEndTime;
 
-  Player(int playerId, String playerName) {
+  public Player(int playerId, String playerName) {
     this.playerId = playerId;
     this.playerName = playerName;
+  }
+
+    public void recordGameTime(LocalDateTime gameStartTime, LocalDateTime gameEndTime) {
+    this.gameStartTime = gameStartTime;
+    this.gameEndTime = gameEndTime;
+
   }
 
   public String getPlayerName() {
