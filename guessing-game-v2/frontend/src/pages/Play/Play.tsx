@@ -1,21 +1,30 @@
 import React from "react";
+import './Play.css';
 
 export const Play: React.FC = () => {
     return (
         <body>
         <div className="background-2">
             <div className="paper-background">
-                <div className= "title-section">
-                    <h1 className="Title">Welcome to<br/><em className="num">num</em><em className="Me">Me</em><em className="Crazy">Crazy</em></h1>
+            <span>
+                <div className= "screen-area">
+                
+                    <h1 className="Output">**************************************************<br>
+                    </br>**************                      **************<br>
+                    </br>              Welcome to numMeCrazy!<br>
+                    </br>**************    ***********************************************                  **************
+                    </h1>
+                    <input className="input-section"></input>
                 </div>
                 <div className="buttons">
-                    <button className="start">
-                        <a href="/play">Start</a>
+                    <button className="submit">
+                        <a href="/play">Submit</a>
                     </button>
-                    <button className="credits">
+                    <button className="title-button">
                         <a href="/">Title Screen</a>
                     </button>
                 </div>
+                </span>
             </div>
         </div>
         </body>

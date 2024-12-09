@@ -13,7 +13,7 @@ body {
   margin-right: 1%;
   margin-bottom: 1%;
   object-fit: cover;
-  height: 45em;
+  height: 54em;
 }
 .paper-background{
   background-image: url("https://i.pinimg.com/originals/0b/41/25/0b41253a4041ddb57004d633e4979430.jpg");
@@ -24,7 +24,7 @@ body {
   margin-right: 2%;
   margin-bottom: 2%;
   translate: 0% 2.5%;
-  height: 43em;
+  height: 51em;
 }
 .title-section {
   max-width: 50%;
@@ -110,14 +110,33 @@ top: -8px;
 font-size: 1.2rem;
 color: black;
 }
+
+
+/* Play Page CSS */
+
+
+.screen-area {
+  background-color: rgba(128, 128, 128, 0.96);
+  max-width: 70%;
+  width: 55%;
+  translate: 40% 10%;
+  background-size: cover;
+}
+
+.Output {
+  color: white;
+  text-align: center;
+  font-size: auto;
+}
+
 .submit {
   background-color: #4caf50;
   color: white;
   align-items: center;
   gap: 5px;
   }
-  .submit::after {
-    content: "↩️";
+.submit::after {
+    content: "📩";
     position: absolute;
     right: -8px;
     top: -12px;
@@ -128,11 +147,15 @@ color: black;
     background-color: #f44336;
     color: white;
     }
-  .title-button::after {
-    content: "https://cdn2.iconfinder.com/data/icons/zoldo-minimal-user-interface-1/32/back_return_arrow-512.png";
+.title-button::after {
+    content: "↩";
     position: absolute;
     right: -7px;
-    top: -8px;
-    font-size: 1.2rem;
+    top: 30px;
+    font-size: 2rem;
     color: black;
     }
+.input-section {
+  translate: 215% 900%;
+
+}
