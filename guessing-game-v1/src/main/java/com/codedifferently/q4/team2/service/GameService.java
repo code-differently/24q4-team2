@@ -69,12 +69,14 @@ public class GameService {
         AutoPlayer(int playerId, String playerName) {
           super(playerId, playerName);
         }
-    }  
+      
       public int getAutoPlayerId(int autoPlayerId) {
           autoPlayerId = (int)Math.random();
         return autoPlayerId;
       }
 
+  }
 }
+
 
   
