@@ -6,7 +6,6 @@ import java.time.LocalDateTime;
 import java.util.Scanner;
 
 @Service
-
 public class GameService {
 
     public class Player {
