@@ -14,9 +14,9 @@ export const Play: React.FC = () => {
                     </br>              Welcome to numMeCrazy!<br>
                     </br>**************    ***********************************************                  **************
                     </h1>
-                    <input className="input-section"></input>
                 </div>
                 <div className="buttons">
+                <input className="input-section"></input>
                     <button className="submit">
                         <a href="/play">Submit</a>
                     </button>
