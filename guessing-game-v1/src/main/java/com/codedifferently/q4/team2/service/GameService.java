@@ -1,10 +1,14 @@
 package com.codedifferently.q4.team2.service;
 
+import org.springframework.stereotype.Service;
+
 import java.time.LocalDateTime;
 import java.util.Scanner;
 
+@Service
+
 public class GameService {
-    
+
     public class Player {
         private boolean isGameOn;
   protected Scanner console;      
