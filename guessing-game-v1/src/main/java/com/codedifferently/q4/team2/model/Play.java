@@ -4,6 +4,7 @@ public class Play {
     private Long playTimeElapsed;
     private int playAttempts;
     private int playScore;
+     private boolean isGameOn;
 
     public Play(Long playTimeElapsed, int playAttempts, int playScore) {
         this.playTimeElapsed = playTimeElapsed; 
@@ -33,6 +34,7 @@ public class Play {
     public void setPlayScore(int playScore) {
         this.playScore = playScore;
     }
+    
 }
 
 
