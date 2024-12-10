@@ -1,7 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 body {
   background-color: orange;
   overflow: hidden; /* Hide scrollbars */
   min-width: 60em;
+  min-height: 2em;
+  margin: 0; /* Removes default body margin */
 }
 .background-2 {
   background-color: green;
@@ -12,11 +19,10 @@ body {
   margin-right: 1%;
   margin-bottom: 1%;
   object-fit: cover;
-  height: 420em;
-  max-height: 50em;
+  height: 54em;
 }
 .paper-background{
-  background-image: url("https://i.pinimg.com/originals/0b/41/25/0b41253a4041ddb57004d633e4979430.jpg") ;
+  background-image: url("https://i.pinimg.com/originals/0b/41/25/0b41253a4041ddb57004d633e4979430.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   margin-left: 2%;
@@ -24,8 +30,7 @@ body {
   margin-right: 2%;
   margin-bottom: 2%;
   translate: 0% 2.5%;
-  height: 400em;
-  max-height: 47em;
+  height: 51em;
 }
 .title-section {
   max-width: 50%;
@@ -67,7 +72,6 @@ body {
   justify-content: center;  /* Centers the buttons horizontally */
   align-items: center;
   gap: 20px;  /* Adds space between the buttons */
-  margin-top: 20px;  /* Adds space between the .title-section and the buttons */
   width: 100%;  /* Makes sure the container spans the full width of the parent */
 }
 button {
@@ -84,6 +88,16 @@ button {
 }
 button:hover {
 transform: scale(1.1);
+}
+button a {
+  color: inherit; /* Inherits the text color from the button */
+  text-decoration: none; /* Removes the underline */
+  font-size: inherit; /* Matches the font size of the button */
+  display: inline-block; /* Ensures proper spacing inside the button */
+  width: 100%; /* Ensures it spans the button for better clickability */
+  height: 100%;
+  text-align: center;
+  line-height: 1.5; /* Ensures the text aligns vertically for better appearance */
 }
 .start {
 background-color: #4caf50;
@@ -110,4 +124,65 @@ right: -7px;
 top: -8px;
 font-size: 1.2rem;
 color: black;
+}
+
+
+/* Play Page CSS */
+
+
+.screen-area {
+  background-color: rgba(128, 128, 128, 0.8);
+  max-width: 70%;
+  min-width: 35em;
+  width: 65%;
+  translate: 20% 10%;
+  background-size: cover;
+  margin-bottom: 0%;
+  height: 30em;
+  padding-bottom: 0%;
+  border-radius: 10px;
+}
+
+.Output {
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  height: 16em;
+}
+
+.submit {
+  background-color: #4caf50;
+  color: white;
+  align-items: center;
+  gap: 5px;
+  translate: -55% 160%;
+  }
+.submit::after {
+    content: "📩";
+    position: absolute;
+    right: -8px;
+    top: -12px;
+    font-size: 1.2rem;
+    color: black;
+  }
+.title-button {
+    background-color: #f44336;
+    color: white;
+    translate: -38% 150%;
+    }
+.title-button::after {
+    content: "↩";
+    position: absolute;
+    right: -7px;
+    top: 30px;
+    font-size: 2rem;
+    color: black;
+    }
+.input-section {
+  translate: -23% 250%;
+  width: 20em;
+  height: 2em
+}
+.nMCDude {
+  translate: 55em -24.75em;
 }

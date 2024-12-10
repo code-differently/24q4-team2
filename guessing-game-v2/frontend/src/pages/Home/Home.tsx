@@ -1,9 +1,7 @@
 import React from "react";
 
-class Home extends React.Component{
-    render() {
+export const Home: React.FC = () => {
         return (
-        <body>
         <div className="background-2">
             <div className="paper-background">
                 <div className= "title-section">
@@ -11,15 +9,14 @@ class Home extends React.Component{
                 </div>
                 <div className="buttons">
                     <button className="start">
-                        Start
+                        <a href="/play">Start</a>
                     </button>
                     <button className="credits">Credits</button>
                 </div>
             </div>
         </div>
-        </body>
         );
     }
-}
+
 
 export default Home;
