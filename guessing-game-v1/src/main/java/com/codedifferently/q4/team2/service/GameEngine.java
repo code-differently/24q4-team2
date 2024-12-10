@@ -3,7 +3,6 @@ package com.codedifferently.q4.team2.service;
 import com.codedifferently.q4.team2.model.Difficulty;
 import com.codedifferently.q4.team2.model.LeaderboardEntry;
 import java.util.*;
-import java.util.InputMismatchException;
 
 public class GameEngine {
 
@@ -102,7 +101,12 @@ public class GameEngine {
         System.out.println("\n\n");
         System.out.println("\n                 Hi, " + playerName + "!\n             Let's get Started!\n\n\n\n\n");
         System.out.println("  Your Number GUESS must be Between 1 and " + level.value + "\n");
-    finally { 
+ }
+  }  catch (InputMismatchException e) {
+    System.out.println("\n⚠️ Invalid input. Please enter a valid number.");
+    console.nextLine(); // Clears the buffer
+}
+        finally { 
         if (!validInput) {
             System.out.println("Retrying difficulty selection...");
         }
