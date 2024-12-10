@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.Scanner;
+import java.util.Random;
 
 
 @Service 
@@ -66,16 +67,37 @@ public class GameService {
     }
 
     public class AutoPlayer extends Player {
+        private Random random;
+
         AutoPlayer(int playerId, String playerName) {
           super(playerId, playerName);
+          this.random = new Random();
         }
       
-      public int getAutoPlayerId(int autoPlayerId) {
-          autoPlayerId = (int)Math.random();
-        return autoPlayerId;
+      public int getAutoPlayerId() {
+          return random.nextInt(1000);
       }
 
-  }
+      public int getAutoPlayerGuess(int maxRange) {
+
+        return random.nextInt(maxRange + 1);
+      }
+    }
+
+
+    public Player generatePlayer(String playerName) {
+        if(playerName == null || playerName.trim().isEmpty()) {
+            throw new IllegalArgumentException("Player name cannot be empty");
+        
+        }
+        int PlayerId = new Random().nextInt(10000);
+        return new Player(new Random().nextInt(10000), playerName);
+    }
+
+    public AutoPlayer generateAutoPlayer() {
+        int autoPlayerId = new Random().nextInt(1000);
+        return new AutoPlayer(new Random().nextInt(1000), null);
+    }
 }
 
 
