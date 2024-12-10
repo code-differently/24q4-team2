@@ -2,7 +2,6 @@ import React from "react";
 
 export const Home: React.FC = () => {
         return (
-        <body>
         <div className="background-2">
             <div className="paper-background">
                 <div className= "title-section">
@@ -16,7 +15,6 @@ export const Home: React.FC = () => {
                 </div>
             </div>
         </div>
-        </body>
         );
     }
 
