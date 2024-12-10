@@ -10,9 +10,9 @@ export const Play: React.FC = () => {
             <span>
                 <div className= "screen-area">
                 
-                    <h1 className="Output">
+                    <h1 className="output">
                         **************************************************<br>
-                    </br>************** ************** **************<br>
+                    </br>**************&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**************<br>
                     </br>************** Welcome to numMeCrazy! **************<br>
                     </br>**************    ************** **************<br>
                     </br>**************************************************
