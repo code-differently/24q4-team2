@@ -70,7 +70,7 @@ public class GameEngine {
         int difficultyChoice = -1;
         boolean validInput = false;
         while (!validInput) {
-            try {
+            try { if (validInput) 
         
         System.out.println("****** Please select Game difficulty level: ******\n");
         System.out.println("{1}. \t Easy (1-10)");
