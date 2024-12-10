@@ -1,5 +1,6 @@
 import React from "react";
 import './Play.css';
+import numMeCrazyDude from '../../assets/numMeCrazyDude.png';
 
 export const Play: React.FC = () => {
     return (
@@ -9,24 +10,24 @@ export const Play: React.FC = () => {
             <span>
                 <div className= "screen-area">
                 
-                    <h1 className="Output">**************************************************<br>
-                    </br>**************                      **************<br>
-                    </br>              Welcome to numMeCrazy!<br>
-                    </br>**************    ***********************************************                  **************
+                    <h1 className="Output">
+                        **************************************************<br>
+                    </br>************** ************** **************<br>
+                    </br>************** Welcome to numMeCrazy! **************<br>
+                    </br>**************    ************** **************<br>
+                    </br>**************************************************
                     </h1>
                 </div>
                 <div className="buttons">
-                <input className="input-section"></input>
+                    <input className="input-section"></input>
                     <button className="submit">
-                        <a href="/play">Submit</a>
+                        <a href="">Submit</a>
                     </button>
                     <button className="title-button">
                         <a href="/">Title Screen</a>
                     </button>
                 </div>
-                <div>
-                    <img className="nMCDude" alt="numMeCrazyDude" src="./numMeCrazyDude.png" />
-                </div>
+                <img className="nMCDude" src={numMeCrazyDude} alt="numMeCrazyBoy" width="500" />
                 </span>
             </div>
         </div>

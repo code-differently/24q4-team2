@@ -133,11 +133,12 @@ color: black;
 .screen-area {
   background-color: rgba(128, 128, 128, 0.8);
   max-width: 70%;
+  min-width: 35em;
   width: 65%;
   translate: 20% 10%;
   background-size: cover;
   margin-bottom: 0%;
-  height: 35em;
+  height: 30em;
   padding-bottom: 0%;
   border-radius: 10px;
 }
@@ -145,7 +146,8 @@ color: black;
 .Output {
   color: white;
   text-align: center;
-  font-size: auto;
+  font-size: 25px;
+  height: 16em;
 }
 
 .submit {
@@ -177,6 +179,10 @@ color: black;
     color: black;
     }
 .input-section {
-  translate: -40% 400%;
-  size: 50em;
+  translate: -23% 250%;
+  width: 20em;
+  height: 2em
+}
+.nMCDude {
+  translate: 55em -24.75em;
 }
