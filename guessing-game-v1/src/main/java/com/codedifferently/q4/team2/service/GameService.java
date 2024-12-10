@@ -2,6 +2,10 @@ package com.codedifferently.q4.team2.service;
 
 import org.springframework.stereotype.Service;
 
+import com.codedifferently.q4.team2.model.Difficulty;
+
+import org.springframework.util.StopWatch;
+
 import java.time.LocalDateTime;
 import java.util.Scanner;
 import java.util.Random;
@@ -98,6 +102,47 @@ public class GameService {
         int autoPlayerId = new Random().nextInt(1000);
         return new AutoPlayer(new Random().nextInt(1000), null);
     }
+
+    public class Play {
+        Difficulty level = Difficulty.EASY;
+        private LocalDateTime gameStartTime;
+        private LocalDateTime gameEndTime;
+        private boolean isGameOn;
+        private Long playTimeElapsed;
+        private int playAttempts;
+        private int playScore;
+
+        public void recordGameTime(LocalDateTime gameStartTime, LocalDateTime gameEndTime) {
+            this.gameStartTime = gameStartTime;
+            this.gameEndTime = gameEndTime;
+        }
+
+
+    public Play(Long playTimeElapsed, int playAttempts, int playScore) {
+        this.playTimeElapsed = playTimeElapsed; 
+        this.playAttempts = playAttempts;
+        this.playScore = playScore;
+    }
+
+    public void getPlayTimeElapsed() {
+        StopWatch gameTimer = new StopWatch();
+
+        try {
+            gameTimer.start("Guess Attempt");
+
+            
+        }
+
+     
+    }
+
+
+
+            
+        
+    }
+
+
 }
 
 

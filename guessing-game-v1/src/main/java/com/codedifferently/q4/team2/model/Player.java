@@ -3,11 +3,13 @@ package com.codedifferently.q4.team2.model;
 import java.time.LocalDateTime;
 import java.time.Duration;
 
+
 public class Player {
   private int playerId;
   private String playerName;
   private LocalDateTime gameStartTime;
   private LocalDateTime gameEndTime;
+  private int playerGuess; 
 
   public Player(int playerId, String playerName) {
     this.playerId = playerId;
@@ -51,6 +53,14 @@ public class Player {
 
   public void setEndGame() {
     this.gameEndTime = LocalDateTime.now();
+  }
+
+  public int getPlayerGuess() {
+    return (int) (Math.random() * Difficulty.MEDIUM.value);
+  }
+
+  public void setPlayerGuess(int playerGuess) {
+    this.playerGuess = playerGuess;
   }
 
 }
