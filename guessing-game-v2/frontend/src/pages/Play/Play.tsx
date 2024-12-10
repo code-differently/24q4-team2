@@ -24,6 +24,9 @@ export const Play: React.FC = () => {
                         <a href="/">Title Screen</a>
                     </button>
                 </div>
+                <div>
+                    <img className="nMCDude" alt="numMeCrazyDude" src="./numMeCrazyDude.png" />
+                </div>
                 </span>
             </div>
         </div>
