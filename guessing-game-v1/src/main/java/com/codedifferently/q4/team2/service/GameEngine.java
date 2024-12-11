@@ -15,6 +15,31 @@ public class GameEngine {
 
     private Map<Difficulty, List<LeaderboardEntry>> leaderboard;
 
+    private Difficulty selectDifficulty(int choice) {
+        try {
+            switch (choice) {
+                case 1: return Difficulty.EASY;
+                case 2: return Difficulty.MEDIUM;
+                case 3: return Difficulty.HARD;
+                case 0: {
+                   exitGame(0);
+                   return Difficulty.EASY;
+
+                }
+                default: {
+                    System.out.println("\n⚠️ Invalid difficulty selected. Defaulting to EASY level.");
+                    return Difficulty.EASY;
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("\n⚠️ An error ocurred during difficulty selection. Defaulting to EASY.");
+            return Difficulty.EASY;
+        }
+    
+    } 
+
+
+
     public GameEngine() {
         this.console = new Scanner(System.in);
         this.secretNumber = -1;
@@ -41,6 +66,12 @@ public class GameEngine {
         System.out.println("              Welcome to numMeCrazy!");
         System.out.println("**************                      **************");
         System.out.println("**************************************************\n");
+        int difficultyChoice = -1;
+        boolean validInput = false;
+        while (!validInput) {
+            try { 
+                  if (validInput) {
+        
         System.out.println("****** Please select Game difficulty level: ******\n");
         System.out.println("{1}. \t Easy (1-10)");
         System.out.println("{2}. \t Medium (1-20)");
@@ -51,20 +82,17 @@ public class GameEngine {
         int difficulty = console.nextInt();
         System.out.println("\n\n\n\n\n\n\n");
         exitGame(difficulty);
-        switch (difficulty) {
-            case 1:
-                level = Difficulty.EASY;
-                break;
-            case 2:
-                level = Difficulty.MEDIUM;
-                break;
-            case 3:
-                level = Difficulty.HARD;
-                break;
-            default:
-                break;
+        if (console.hasNextInt()) {
+            difficultyChoice = console.nextInt();
+
+            level = selectDifficulty(difficultyChoice);
+            validInput = true;
+        } else {
+            System.out.println("\n⚠️ Please enter a valid number.");
+            console.nextInt();
         }
-        secretNumber = generateNumberToGuess(Difficulty.valueOf(level.name()));
+        
+        secretNumber = generateNumberToGuess(level);
         System.out.println("\n     You Selected " + level.name() + " difficulty level \n");
         System.out.println("*************************************************\n\n\n\n\n");
         System.out.print("Please enter your name :\n");
@@ -73,7 +101,18 @@ public class GameEngine {
         System.out.println("\n\n");
         System.out.println("\n                 Hi, " + playerName + "!\n             Let's get Started!\n\n\n\n\n");
         System.out.println("  Your Number GUESS must be Between 1 and " + level.value + "\n");
+ }
+  }  catch (InputMismatchException e) {
+    System.out.println("\n⚠️ Invalid input. Please enter a valid number.");
+    console.nextLine(); // Clears the buffer
+}
+        finally { 
+        if (!validInput) {
+            System.out.println("Retrying difficulty selection...");
+        }
+    } }
     }
+
 
     public void play() {
         // Common play logic for both modes (getting guesses, validating, updating attempts)
@@ -114,6 +153,7 @@ public class GameEngine {
             }
         }
     }
+
 
     protected int playerGuess(String playerName) {
         System.out.print(
@@ -168,5 +208,6 @@ public class GameEngine {
         for (int i = 0; i < scores.size(); i++) {
             System.out.println("           " + (i + 1) + ". " + scores.get(i));
         }
-    }
+    } 
 }
+
