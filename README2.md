@@ -10,7 +10,7 @@ The numMeCrazy Game is an exciting and interactive project where players can enj
 
 * Spring Boot 3.2.2
 * JDK 17
-* MySQLITE Database
+* SQLITE Database
 * Tomcat/10.1.18
 * FLY.IO
 * Docker
@@ -26,9 +26,9 @@ The numMeCrazy Game is an exciting and interactive project where players can enj
 ### Credits
 
 * Animations: Created using CSS
-* Database Management API: Powered by MySQLITE
+* Database Management API: Powered by SQLITE
 * Deployment: Hosted on FLY.IO
-* Framework: Built with ReatVite, styled with Tailwind CSS, and written in Java
+* App Details: Frontend - React, Styling - Tailwind, Backend - Java.
 
 
 
