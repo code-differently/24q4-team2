@@ -5,11 +5,23 @@ public class Play {
     private int playAttempts;
     private int playScore;
      private boolean isGameOn;
+     private boolean isGuessCorrect;
+     private int UpdatedScore;
+     
 
-    public Play(Long playTimeElapsed, int playAttempts, int playScore) {
+    public Play(Long playTimeElapsed, int playAttempts, int playScore, boolean isGameOn, boolean isGuessCorrect) {
         this.playTimeElapsed = playTimeElapsed; 
         this.playAttempts = playAttempts;
         this.playScore = playScore;
+        this.UpdatedScore = UpdatedScore; 
+    }
+
+    public boolean isGameOn() {
+        return isGameOn;
+    }
+
+    public void isGameOn(boolean isGameOn) {
+        this.isGameOn = isGameOn;
     }
 
     public Long getPlayTimeElapsed() {
@@ -34,7 +46,27 @@ public class Play {
     public void setPlayScore(int playScore) {
         this.playScore = playScore;
     }
-    
+
+    public boolean getIsGuessCorrect() {
+        return isGuessCorrect;
+    }
+
+    public void SetIsGuessCorrect(boolean isGuessCorrect) {
+        this.isGuessCorrect = isGuessCorrect;
+    }
+
+    public int getUpdatedScore() {
+        return UpdatedScore;
+    }
+
+    public void setUpdatedScore(int UpdatedScore) {
+        this.UpdatedScore = UpdatedScore;
+    }
+
+
+
+
+
 }
 
 
