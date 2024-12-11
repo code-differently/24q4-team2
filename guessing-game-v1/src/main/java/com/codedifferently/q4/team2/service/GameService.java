@@ -172,14 +172,15 @@ public class GameService {
             this.playeScore += points;
            }
 
-           public int getPlayScore(int points, int playAttempts) {
-               int attemptPenalty = playAttempts; 
-               int playScore = points;
-               while(isGameOn == true && isGuessCorrect == true) {
-                  playScore++;
-               }
-                playScore += points - attemptPenalty;
+          public int getPlayScore(int basePoints, int playAttempts) {
+                int playScore = basePoints;
+               int attemptPenalty = calculatePlayAttemptPenalty(playAttempts);
+               playScore -= attemptPenalty;
+               
+               playScore = Math.max(0,playScore); //Added Math.max to avoid scores with negative integers
+               
                return playScore;
+               }
            }
 
            public int calculatePlayAttemptPenalty(int playAttempts) {
