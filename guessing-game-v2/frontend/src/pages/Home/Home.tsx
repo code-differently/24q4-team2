@@ -21,7 +21,7 @@ export const Home: React.FC = () => {
         };
 
         // Random interval between 3 to 8 seconds
-        const randomInterval = () => Math.random() * 10000 + 10000;
+        const randomInterval = () => Math.random() * 15000 + 5000;
 
 
         // Set up the interval logic
