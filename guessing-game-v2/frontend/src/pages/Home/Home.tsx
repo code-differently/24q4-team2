@@ -9,22 +9,24 @@ export const Home: React.FC = () => {
     useEffect(() => {
         
         // Function to start the animation at random intervals
+        const randomizeMovement = () => {
+            setIsAnimating(true);
+            // Reset animation after 8s (animation duration)
+            setTimeout(() => setIsAnimating(false), 8000); 
+        };
+
         const startFlying = () => {
             setIsFlying(true);
             setTimeout(() => setIsFlying(false), 5000); // Reset after 5 seconds (animation duration)
-        };
-        const randomizeMovement = () => {
-            setIsAnimating(true);
-            // Reset animation after 10s (animation duration)
-            setTimeout(() => setIsAnimating(false), 10000); 
         };
 
         // Random interval between 3 to 8 seconds
         const randomInterval = () => Math.random() * 10000 + 10000;
 
+
         // Set up the interval logic
         const interval = setInterval(() => {
-            startFlying();
+            startFlying(), randomizeMovement();
         }, randomInterval());
 
         // Cleanup interval on unmount
