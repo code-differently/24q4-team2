@@ -129,6 +129,9 @@ color: black;
 
 /* Play Page CSS */
 
+.response {
+  translate: 0% 10em;
+}
 
 .screen-area {
   background-color: rgba(128, 128, 128, 0.8);

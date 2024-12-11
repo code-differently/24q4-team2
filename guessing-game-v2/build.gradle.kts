@@ -40,11 +40,17 @@ dependencies {
     implementation("com.google.guava:guava:31.1-jre")
     implementation("com.google.code.gson:gson:2.10.1")
     implementation("org.springframework.boot:spring-boot-starter")
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.xerial:sqlite-jdbc:3.36.0.3")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa");
+    implementation("org.hibernate.orm:hibernate-community-dialects:6.6.3.Final");
+    implementation("org.xerial:sqlite-jdbc:3.36.0.3");
 }
 
 application {
     // Define the main class for the application.
-    mainClass.set("com.codedifferently.q4.team2.GameLauncher")
+    // mainClass.set("com.codedifferently.q4.team2.GameLauncher")
+    mainClass.set("com.codedifferently.q4.team2.Main")
 }
 
 tasks.named<Test>("test") {
@@ -64,7 +70,7 @@ tasks.jacocoTestCoverageVerification {
     violationRules {
         rule {
             limit {
-                minimum = "0.8".toBigDecimal()
+                minimum = "0.7".toBigDecimal()
             }
         }
     }

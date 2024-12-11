@@ -8,6 +8,6 @@ public enum Difficulty {
   public final int value;
 
   private Difficulty(int value) {
-      this.value = value;
+    this.value = value;
   }
 }
