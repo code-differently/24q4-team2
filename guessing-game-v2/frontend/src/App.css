@@ -180,6 +180,9 @@ color: black;
 
 /* Play Page CSS */
 
+.response {
+  translate: 0% 10em;
+}
 
 .screen-area {
   background-color: rgba(128, 128, 128, 0.8);
@@ -194,7 +197,7 @@ color: black;
   border-radius: 10px;
 }
 
-.output {
+.Output {
   color: white;
   text-align: center;
   font-size: 25px;

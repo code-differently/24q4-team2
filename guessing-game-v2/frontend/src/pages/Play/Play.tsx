@@ -3,26 +3,64 @@ import './Play.css';
 import numMeCrazyDude from '../../assets/numMeCrazyDude.png';
 
 export const Play: React.FC = () => {
+    const [inputText, setInputText] = useState('');
+    const [response, setResponse] = useState('');
+
+    const handleInputChange = (event:any) => {
+        setInputText(event.target.value);
+      };
+
+      const sendGuess = async (guess:string) => {
+        try {
+          const res = await fetch(`http://localhost:8081/guess`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(({ text: inputText })),
+          });
+    
+          const data = await res.text();
+          setResponse(data);
+        } catch (error) {
+          console.error("Error:", error);
+        }
+      };
+  
     return (
         <body>
         <div className="background-2">
             <div className="paper-background">
             <span>
                 <div className= "screen-area">
-                
-                    <h1 className="output">
-                        **************************************************<br>
-                    </br>**************&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**************<br>
-                    </br>************** Welcome to numMeCrazy! **************<br>
-                    </br>**************    ************** **************<br>
-                    </br>**************************************************
-                    </h1>
+                <h1 className="Output">{response}</h1>
                 </div>
+                <div>
+        {/* <input
+            type="text"
+            value={inputText}
+            onChange={handleInputChange}
+            placeholder="Enter some text"
+        /> */}
+        {/* <button  onClick={() => sendGuess("guess")}>submitGuess</button> */}
+        {/* <div>
+            <p className="response">{response}</p>
+        </div> */}
+    </div>
                 <div className="buttons">
-                    <input className="input-section"></input>
-                    <button className="submit">
+                    {/* <input className="input-section"></input> */}
+                    <input
+                    className="input-section"
+            type="text"
+            value={inputText}
+            onChange={handleInputChange}
+            placeholder="Enter Response Here"
+        />
+
+                    {/* <button className="submit">
                         <a href="">Submit</a>
-                    </button>
+                    </button> */}
+                    <button  className="submit" onClick={() => sendGuess("guess")}>Submit</button>
                     <button className="title-button">
                         <a href="/">Title Screen</a>
                     </button>
