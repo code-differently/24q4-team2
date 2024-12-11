@@ -2,6 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Animation */
+
+@keyframes flyHorizontalLeft {
+  0% {
+      transform: translateX(110vw); /* Start from off-screen right */
+  }
+  100% {
+      transform: translateX(-450px); /* End off-screen left, leaving space at the edge */
+  }
+}
+
+.trainImg {
+  position: absolute;
+  bottom: 0;
+  right: 50; /* Initially place the image at the bottom-right corner */
+  width: 300px; /* Adjust the image size */
+  translate: 0% 1.5em;
+  filter: drop-shadow(0px -8px 5px rgba(0, 0, 0, 0.5)); /* Realistic shadow */
+  opacity: 0; /* Hidden by default */
+  pointer-events: none; /* Prevent it from interfering with interactions */
+}
+
+.trainImg.animate {
+  animation: flyHorizontalLeft 8s linear; /* Animation duration: 10 seconds */
+  opacity: 1; /* Visible during animation */
+}
+
+@keyframes flyDiagonal {
+  0% {
+      transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+      transform: translate(calc(100vw - 100px), calc(-100vh)) rotate(15deg);
+  }
+}
+
+.plane {
+  position: absolute;
+  translate: -10em -10em;
+  bottom: 0;
+  left: 0;
+  width: 100px; /* Adjust plane size */
+  z-index: 999; /* Ensure it is on top of other elements */
+  filter: drop-shadow(7px 7px 5px rgba(0, 0, 0, 0.5)); /* Realistic shadow */
+}
+
+.plane.animate {
+  animation: flyDiagonal 4s linear; /* Animation duration: 5 seconds */
+}
+
+/* Regular CSS */
 
 body {
   background-color: orange;

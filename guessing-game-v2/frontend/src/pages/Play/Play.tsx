@@ -26,14 +26,13 @@ export const Play: React.FC = () => {
           console.error("Error:", error);
         }
       };
-
+  
     return (
         <body>
         <div className="background-2">
             <div className="paper-background">
             <span>
                 <div className= "screen-area">
-                
                 <h1 className="Output">{response}</h1>
                 </div>
                 <div>
@@ -66,7 +65,6 @@ export const Play: React.FC = () => {
                         <a href="/">Title Screen</a>
                     </button>
                 </div>
-                
                 <img className="nMCDude" src={numMeCrazyDude} alt="numMeCrazyBoy" width="500" />
                 </span>
             </div>
