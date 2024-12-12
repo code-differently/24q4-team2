@@ -45,6 +45,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa");
     implementation("org.hibernate.orm:hibernate-community-dialects:6.6.3.Final");
     implementation("org.xerial:sqlite-jdbc:3.36.0.3");
+    compileOnly("org.projectlombok:lombok:1.18.32");
 }
 
 application {

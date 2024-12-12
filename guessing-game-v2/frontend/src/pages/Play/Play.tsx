@@ -1,10 +1,24 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import './Play.css';
 import numMeCrazyDude from '../../assets/numMeCrazyDude.png';
 
 export const Play: React.FC = () => {
     const [inputText, setInputText] = useState('');
     const [response, setResponse] = useState('');
+    const [gameId, setGameId] = useState('');
+
+    useEffect(() => {
+      const startGame = async () => {
+        const res = await fetch(`http://localhost:8081/games`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application.json",
+          },
+          body: JSON.stringify({}),
+        });
+      };
+      startGame();
+    }, []);
 
     const handleInputChange = (event:any) => {
         setInputText(event.target.value);
@@ -12,14 +26,21 @@ export const Play: React.FC = () => {
 
       const sendGuess = async (guess:string) => {
         try {
-          const res = await fetch(`http://localhost:8081/guess`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(({ text: inputText })),
-          });
-    
+          if (isNaN(parseInt(guess))) {
+            setResponse("Please enter a valid number");
+            return;
+          }
+          if (parseInt(guess) === targetNumber) {
+            setResponse("You Win!!!");
+          
+            const res = await fetch(`http://localhost:8081/guess`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(({ text: inputText, gameId })),
+            });
+          }
           const data = await res.text();
           setResponse(data);
         } catch (error) {
@@ -47,10 +68,10 @@ export const Play: React.FC = () => {
             <p className="response">{response}</p>
         </div> */}
     </div>
-                <div className="buttons">
-                    {/* <input className="input-section"></input> */}
-                    <input
-                    className="input-section"
+      <div className="buttons">
+          {/* <input className="input-section"></input> */}
+          <input
+          className="input-section"
             type="text"
             value={inputText}
             onChange={handleInputChange}
