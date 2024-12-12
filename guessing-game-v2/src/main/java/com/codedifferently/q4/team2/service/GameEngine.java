@@ -24,7 +24,7 @@ public class GameEngine {
   public Difficulty level = Difficulty.EASY;
 
   private Map<Difficulty, List<LeaderboardEntry>> leaderboard;
-  private Map<String, GameState> activeSessions = new ConcurrentHashMap<>();
+  private Map<String, GameState> games;
 
   public GameEngine() {
     this.console = new Scanner(System.in);
@@ -45,7 +45,7 @@ public class GameEngine {
     var state = new GameState();
     state.setSecretNumber(generateNumberToGuess(level));
     System.out.println("Secret number:" + state.getSecretNumber());
-    this.games.set(gameId, state);
+    this.games.put(gameId, state);
     return gameId;
   }
 
@@ -54,10 +54,14 @@ public class GameEngine {
       return "You need to start the game first!";
     }
 
-    if (secretNumber == guess) {
+    var gameState = this.games.get(gameId);
+    var secretNumber = gameState.getSecretNumber();
+    System.out.println("Secret number: " + secretNumber + " guess: " + guess);
+    if (Integer.valueOf(secretNumber).equals(guess)) {
       this.games.remove(gameId);
-      return "You Guessed it!";
+      return "You Guessed It!!!";
     }
+    
     GameState.setAttempts(GameState.getAtempts()+1);
     return "Try Again!";
   }

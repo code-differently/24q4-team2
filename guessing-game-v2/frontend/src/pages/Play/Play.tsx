@@ -26,16 +26,23 @@ export const Play: React.FC = () => {
 
       const sendGuess = async (guess:string) => {
         try {
-          const res = await fetch(`http://localhost:8081/guess`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(({ text: inputText, gameId })),
-          });
-    
+          if (isNaN(parseInt(guess))) {
+            setResponse("Please enter a valid number");
+            return;
+          }
+          if (parseInt(guess) === targetNumber) {
+            setResponse("You Win!!!");
+          
+            const res = await fetch(`http://localhost:8081/guess`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(({ text: inputText, gameId })),
+            });
+          }
           const data = await res.text();
-          setResponse(response + "\n" + data);
+          setResponse(data);
         } catch (error) {
           console.error("Error:", error);
         }

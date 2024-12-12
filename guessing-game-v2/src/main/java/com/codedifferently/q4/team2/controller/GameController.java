@@ -11,6 +11,11 @@ import com.codedifferently.q4.team2.model.Difficulty;
 import com.codedifferently.q4.team2.model.InputData;
 import com.codedifferently.q4.team2.service.GameEngine;
 
+@RestController
+@CrossOrigin(origins = "http//localhost:5173")
+public class GameController {
+  private GameEngine gameEngine = new GameEngine();
+
 
   public String helloWorld() {
     return "Hello World";
@@ -41,6 +46,7 @@ import com.codedifferently.q4.team2.service.GameEngine;
   @PostMapping("/games")
   public ResponseEntity<StartGameResponse> startGame() {
     String gameId = gameEngine.startGame();
-    return ResponseEntity.ok(StartGameResponse.builder().gameId(gameId).maxRange(Difficulty.valueOf(request.getDifficulty().toUpperCase()).value).build()
+    return ResponseEntity.ok(StartGameResponse.builder().gameId(gameId).build();
     );
   }
+}
