@@ -1,19 +1,30 @@
 package com.codedifferently.q4.team2.service;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+import java.util.Scanner;
+import java.util.UUID;
+
 import com.codedifferently.q4.team2.model.Difficulty;
+import com.codedifferently.q4.team2.model.GameState;
 import com.codedifferently.q4.team2.model.LeaderboardEntry;
-import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class GameEngine {
 
   protected Scanner console;
-  protected int secretNumber;
+  public int secretNumber;
   boolean isGameOn;
-  String playerName;
-  protected int attempts;
-  Difficulty level = Difficulty.EASY;
+  public String playerName;
+  public int attempts;
+  public Difficulty level = Difficulty.EASY;
 
   private Map<Difficulty, List<LeaderboardEntry>> leaderboard;
+  private Map<String, GameState> activeSessions = new ConcurrentHashMap<>();
 
   public GameEngine() {
     this.console = new Scanner(System.in);
@@ -29,6 +40,28 @@ public class GameEngine {
     leaderboard.put(Difficulty.HARD, new ArrayList<>());
   }
 
+  public String startGame(){
+    var gameId = UUID.randomUUID().toString();
+    var state = new GameState();
+    state.setSecretNumber(generateNumberToGuess(level));
+    System.out.println("Secret number:" + state.getSecretNumber());
+    this.games.set(gameId, state);
+    return gameId;
+  }
+
+  public String makeGuess(String gameId, int guess) {
+    if (!this.games.containsKey(gameId)) {
+      return "You need to start the game first!";
+    }
+
+    if (secretNumber == guess) {
+      this.games.remove(gameId);
+      return "You Guessed it!";
+    }
+    GameState.setAttempts(GameState.getAtempts()+1);
+    return "Try Again!";
+  }
+
   public int generateNumberToGuess(Difficulty level) {
     return (int) (new Random().nextInt(level.value) + 1);
   }
@@ -38,7 +71,7 @@ public class GameEngine {
     System.out.println("\n\n\n\n\n\n\n");
     System.out.println("**************************************************");
     System.out.println("**************                      **************");
-    System.out.println("              Welcome to numMeCrazy!");
+    System.out.println("              Welcome to numMeCrazy!              ");
     System.out.println("**************                      **************");
     System.out.println("**************************************************\n");
     System.out.println("****** Please select Game difficulty level: ******\n");
