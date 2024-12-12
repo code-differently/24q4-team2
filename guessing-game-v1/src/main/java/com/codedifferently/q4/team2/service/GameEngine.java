@@ -3,17 +3,50 @@ package com.codedifferently.q4.team2.service;
 import com.codedifferently.q4.team2.model.Difficulty;
 import com.codedifferently.q4.team2.model.LeaderboardEntry;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class GameEngine {
 
     protected Scanner console;
-    protected int secretNumber;
+    public int secretNumber;
     boolean isGameOn;
-    String playerName;
-    protected int attempts;
-    Difficulty level = Difficulty.EASY;
+    public String playerName;
+    public int attempts;
+    public Difficulty level = Difficulty.EASY;
 
-    private Map<Difficulty, List<LeaderboardEntry>> leaderboard;
+    private Map<Difficulty, List<LeaderboardEntry>> leaderboard; 
+    
+    private Map<String, GameSession> activeSessions = new ConcurrentHashMap<>();
+
+    public String startGame(String playerName, Difficulty difficulty) {
+        // Generate unique game ID
+        String gameId = UUID.randomUUID().toString();
+        
+        // Create a new game session
+        GameSession session = new GameSession(playerName, difficulty);
+        activeSessions.put(gameId, session);
+        
+        return gameId;
+    }
+
+    // Inner class to track game state
+    private class GameSession {
+        String playerName;
+        Difficulty difficulty;
+        int secretNumber;
+        int attempts;
+
+        public GameSession(String playerName, Difficulty difficulty) {
+            this.playerName = playerName;
+            this.difficulty = difficulty;
+            this.secretNumber = generateNumberToGuess(difficulty);
+            this.attempts = 0;
+        }
+    }
+
+
+
+
 
     public GameEngine() {
         this.console = new Scanner(System.in);
@@ -124,7 +157,7 @@ public class GameEngine {
         return response;
     }
 
-    boolean validateGuess(int guess) {
+    public boolean validateGuess(int guess) {
         return guess == secretNumber;
     }
 
