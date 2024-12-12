@@ -20,6 +20,14 @@ public class GameController {
         this.gameEngine = new GameEngine();
     }
 
+    @PostMapping
+    public ResponseEntity<GameStartResponse> startGame(
+        @Valid @RequestBody GameStartRequest request
+    ) {
+        GameStartResponse response = gameService.startGame(request);
+        return ResponseEntity.ok(respponse);
+    }
+
     
     @PostMapping("/start")
     public ResponseEntity<Map<String, Object>> startGame(@RequestBody Map<String, String> payload) {
@@ -75,6 +83,31 @@ public class GameController {
         
         return ResponseEntity.ok(response);
     }
+
+    @PostMapping("/games")
+public ResponseEntity<StartGameResponse> startGame(@RequestBody StartGameRequest request) {
+    // Validate input
+    if (request.getPlayerName() == null || request.getDifficulty() == null) {
+        return ResponseEntity.badRequest().body(
+            StartGameResponse.builder()
+                .error("Player name and difficulty are required")
+                .build()
+        );
+    }
+
+    
+    String gameId = gameEngine.startGame(
+        request.getPlayerName(), 
+        Difficulty.valueOf(request.getDifficulty().toUpperCase())
+    );
+
+    return ResponseEntity.ok(
+        StartGameResponse.builder()
+            .gameId(gameId)
+            .maxRange(Difficulty.valueOf(request.getDifficulty().toUpperCase()).value)
+            .build()
+    );
+}
 
     @GetMapping("/leaderboard")
     public ResponseEntity<Map<String, Object>> getLeaderboard(@RequestParam("difficulty") String difficultyStr) {
