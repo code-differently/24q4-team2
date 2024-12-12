@@ -1,6 +1,7 @@
 import App from './App.tsx';
 import { Play } from './pages/Play/Play';
 import { Home } from './pages/Home/Home.tsx';
+import { Credits } from './pages/Credits/Credits.tsx'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: 'play',
         element: <Play />,
+      },
+      {
+        path: 'credits',
+        element: <Credits />
       },
     ],
   },
