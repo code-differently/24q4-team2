@@ -251,7 +251,8 @@ color: black;
   background-color: #f44336;
   color: white;
   translate: 0% 100%;
-  }
+}
+
 .title-button2::after {
   content: "↩";
   position: absolute;
@@ -259,4 +260,4 @@ color: black;
   top: 30px;
   font-size: 2rem;
   color: black;
-  }
+}
