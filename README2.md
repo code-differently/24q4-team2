@@ -66,13 +66,13 @@ Here is the link Frontend: http://localhost:5173/
 
 ### Project Diagram:
 
-<img src="images/Figma.png" height=250 width=300/>
+<img src="images/Figma!.png" height=250 width=300/>
 
 
-<img src="/Users/hummad/source/24q4-team2-main/images/Diagram-Capstone-1.png" height=250 width=200/>
+<img src="images/HomeScreen.png" height=250 width=300/>
 
 
-<img src="images/numMeCrazy.png" height=250 width=300/>
+<img src="images/PlayScreen.png" height=250 width=300/>
 
 
 
