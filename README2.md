@@ -23,6 +23,37 @@ The numMeCrazy Game is an exciting and interactive project where players can enj
 #### How to Improve
 * Incorporating more front-end styling into this game, It will significantly enhance the user experience
 
+### Installation Instructions
+Go to vs code terminal.
+
+### Backend:
+1. Clone the repository:
+
+  * git clone https://github.com/code-differently/24q4-team2/tree/main/guessing-game-v2
+  * cd guessing-game-v2 
+
+2. Build the application and run:
+   
+  * gradle build 
+  * gradle run
+
+Here is link for Backend http://localhost:8081/
+  
+### Frontend:
+1. Navigate to the directory:
+
+  * cd guessing-game-v2/frontend
+
+2. Install dependencies and run:
+   
+  * npm install
+  * npm run dev
+
+Here is the link Frontend: http://localhost:5173/
+
+
+
+
 ### Credits
 
 * Animations: Created using CSS
