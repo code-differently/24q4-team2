@@ -45,7 +45,9 @@ export const Home: React.FC = () => {
                     <button className="start">
                         <a href="/play">Start</a>
                     </button>
-                    <button className="credits">Credits</button>
+                    <button className="credits">
+                        <a href="/credits">Credits</a>
+                    </button>
                 </div>
             </div>
         </div>

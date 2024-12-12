@@ -240,3 +240,19 @@ color: black;
 .nMCDude {
   translate: 55em -24.75em;
 }
+.credit-names {
+  translate: 19em 5%;
+}
+.title-button2 {
+  background-color: #f44336;
+  color: white;
+  translate: 350% 150%;
+  }
+.title-button2::after {
+  content: "↩";
+  position: absolute;
+  right: -7px;
+  top: 30px;
+  font-size: 2rem;
+  color: black;
+  }
