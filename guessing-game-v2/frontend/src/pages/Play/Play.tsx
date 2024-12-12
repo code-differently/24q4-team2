@@ -1,12 +1,31 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import './Play.css';
 import numMeCrazyDude from '../../assets/numMeCrazyDude.png';
 
 export const Play: React.FC = () => {
     const [inputText, setInputText] = useState('');
     const [response, setResponse] = useState('');
+     const [gameId, setGameId] = useState('');
+    
+    useEffect((): => {
+      const initializeGame = async () => {
+        try {
+          const res = await fetch('http://localhost:5137/start', {
+            method: 'POST'
+          });
+          const data = await res.text();
+          setGameId(data);
+        } catch (error) {
+          console.error("Error starting game:", error);
+        }
+      };
 
-    const handleInputChange = (event:any) => {
+      useEffect(() => {
+        initializeGame();
+     
+    }, []);
+
+    const handleInputChange = (event:React.ChangeEvent<HTMLInputElement>) => {
         setInputText(event.target.value);
       };
 
@@ -17,7 +36,7 @@ export const Play: React.FC = () => {
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify(({ text: inputText })),
+            body: JSON.stringify(({ text: inputText,gameId })),
           });
     
           const data = await res.text();
@@ -74,3 +93,6 @@ export const Play: React.FC = () => {
     }
 
 export default Play;
+
+
+
