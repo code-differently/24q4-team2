@@ -24,7 +24,7 @@ The numMeCrazy Game is an exciting and interactive project where players can enj
 * Incorporating more front-end styling into this game, It will significantly enhance the user experience
 
 ### Installation Instructions
-Go to vs code terminal.
+Go to IDE terminal/mac terminal.
 
 ### Backend:
 1. Clone the repository:
@@ -36,8 +36,6 @@ Go to vs code terminal.
    
   * gradle build 
   * gradle run
-
-Here is link for Backend http://localhost:8081/
   
 ### Frontend:
 1. Navigate to the directory:
@@ -59,7 +57,7 @@ Here is the link Frontend: http://localhost:5173/
 * Animations: Created using CSS
 * Database Management API: Powered by SQLITE
 * Deployment: Hosted on FLY.IO
-* App Details: Frontend - React, Styling - Tailwind, Backend - Java.
+* App Details: Frontend - React, Styling CSS, Backend - Java.
 
 
 
@@ -69,10 +67,10 @@ Here is the link Frontend: http://localhost:5173/
 <img src="images/Figma!.png" height=250 width=300/>
 
 
-<img src="images/HomeScreen.png" height=250 width=300/>
+<img src="images/HomeScreen.png" height=250 width=500/>
 
 
-<img src="images/PlayScreen.png" height=250 width=300/>
+<img src="images/PlayScreen.png" height=250 width=500/>
 
 
 
