@@ -241,13 +241,18 @@ color: black;
   translate: 55em -24.75em;
 }
 .credit-names {
-  translate: 19em 5%;
+  translate: 0% 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* Centers the buttons horizontally */
+  align-items: center;
 }
 .title-button2 {
   background-color: #f44336;
   color: white;
-  translate: 350% 150%;
-  }
+  translate: 0% 100%;
+}
+
 .title-button2::after {
   content: "↩";
   position: absolute;
@@ -255,4 +260,4 @@ color: black;
   top: 30px;
   font-size: 2rem;
   color: black;
-  }
+}
