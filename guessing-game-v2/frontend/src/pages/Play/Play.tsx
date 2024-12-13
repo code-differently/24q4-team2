@@ -45,10 +45,10 @@ export const Play: React.FC = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ text: inputText, gameId }), // Corrected JSON stringify
+        body: JSON.stringify({ text: inputText, gameId: gameId }), // Corrected JSON stringify
       });
       const data = await res.text();
-      setResponse(response + "\n" + data);
+      setResponse(prevresponse => prevresponse + "\n" + data);
     } catch (error) {
       console.error("Error:", error);
     }
