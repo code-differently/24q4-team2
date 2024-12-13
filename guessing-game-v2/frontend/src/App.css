@@ -241,6 +241,7 @@ color: black;
   translate: 70em -24.75em;
   animation: squish 2.5s infinite ease-in-out;
   transform-origin: bottom; /* Ensures scaling happens around the center */
+  filter: drop-shadow(0px -8px 5px rgba(0, 0, 0, 0.5)); /* Realistic shadow */
 }
 @keyframes squish {
   0% {
