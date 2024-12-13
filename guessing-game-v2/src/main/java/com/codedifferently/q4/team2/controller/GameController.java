@@ -24,7 +24,7 @@ public class GameController {
   @PostMapping("/guess")
   public String handleGuess(@RequestBody InputData inputData) {
     String receivedText = inputData.getText();
-    System.out.println("Received entry: NILE " + receivedText);
-    return ("Received message: NILE ......... " + receivedText);
+    System.out.println("Answer Submitted: " + receivedText);
+    return ("Answer Submitted: " + receivedText);
   }
 }

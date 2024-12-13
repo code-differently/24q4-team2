@@ -238,7 +238,26 @@ color: black;
   height: 2em
 }
 .nMCDude {
-  translate: 55em -24.75em;
+  translate: 70em -24.75em;
+  animation: squish 2.5s infinite ease-in-out;
+  transform-origin: bottom; /* Ensures scaling happens around the center */
+}
+@keyframes squish {
+  0% {
+    transform: scaleY(1);
+  }
+  25% {
+    transform: scaleY(0.9); /* Slight squish */
+  }
+  50% {
+    transform: scaleY(1.05); /* Slight stretch */
+  }
+  75% {
+    transform: scaleY(0.9); /* Slight squish */
+  }
+  100% {
+    transform: scaleY(1);
+  }
 }
 .credit-names {
   translate: 0% 5%;
